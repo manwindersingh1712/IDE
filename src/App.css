@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 0.6fr;
+  grid-template-rows: 0.1fr 0.1fr 0.3fr 0.1fr 0.7fr 0.2fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "head head head"
+    "type type input"
+    "editor editor input_val"
+    "editor editor output"
+    "editor editor output_val"
+    "run clear .";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.head {
+  grid-area: head;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.type {
+  color: black;
+  grid-area: type;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.input {
+  grid-area: input;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input_val {
+  grid-area: input_val;
+  background-color: rgb(37, 37, 37);
   color: white;
+  margin: 0 50px;
+  overflow-y: auto;
+  margin-left: 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+.output {
+  grid-area: output;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.output_val {
+  grid-area: output_val;
+  font-size: small;
+  background-color: rgb(37, 37, 37);
+  margin: 50px;
+  color: white;
+  overflow-y: auto;
+  margin-left: 0;
+  border-radius: 5px;
+  padding: 10px;
+}
+.run {
+  grid-area: run;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.run button {
+  background-color: rgba(24, 87, 204, 0.836);
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+  border-width: 0;
+}
+.clear button {
+  background-color: rgba(238, 18, 18, 0.788);
+  color: white;
+  padding: 8px;
+  border-radius: 2px;
+  border-width: 0;
+}
+button:hover {
+  opacity: 0.6;
+}
+.clear {
+  grid-area: clear;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.editor {
+  grid-area: editor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coder {
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
 }
