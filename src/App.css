@@ -5,36 +5,56 @@
 .container {
   height: 100vh;
   display: grid;
-  grid-template-columns: 0.3fr 1fr 0.6fr;
-  grid-template-rows: 0.1fr 0.1fr 0.3fr 0.1fr 0.7fr 0.2fr;
-  grid-gap: 10px;
+  grid-template-columns: 0.3fr 0.7fr 0.6fr;
+  grid-template-rows: 0.1fr 0.1fr 0.5fr 0.1fr 0.7fr 0.2fr;
+  grid-gap: 30px;
   grid-template-areas:
     "head head head"
-    "type type input"
+    "lang type input"
     "editor editor input_val"
     "editor editor output"
     "editor editor output_val"
     "run clear .";
+  font-family: sans-serif;
 }
 
+.lang {
+  grid-area: lang;
+  margin-left: 80px;
+}
+.lang select {
+  border-width: 0;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.lang select:focus {
+  outline-width: 0;
+}
 .head {
   grid-area: head;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 4rem;
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.712);
 }
 .type {
   color: black;
   grid-area: type;
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
+  font-weight: 900;
 }
 .input {
   grid-area: input;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 900;
 }
 .input_val {
   grid-area: input_val;
@@ -60,23 +80,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 900;
 }
 .output_val {
   grid-area: output_val;
   font-size: small;
   background-color: rgb(37, 37, 37);
-  margin: 50px;
+  /* margin: 50px; */
   color: white;
   overflow-y: auto;
-  margin-left: 0;
+  margin-right: 50px;
   border-radius: 5px;
   padding: 10px;
+  height: 100%;
 }
 .run {
   grid-area: run;
   display: flex;
+  margin-left: 80px;
   align-items: center;
-  justify-content: flex-end;
 }
 .run button {
   background-color: rgba(24, 87, 204, 0.836);
@@ -100,12 +122,17 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
+  left: -120px;
 }
 .editor {
   grid-area: editor;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 80px;
+  position: relative;
+  top: 10px;
   /* width: fit-content; */
 }
 
