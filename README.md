@@ -1,5 +1,5 @@
 # Online IDE For Python and C++
-I have created this ide on the frontend with React and the api been used for compilation is been made in node by me (https://github.com/manwindersingh1712/Compiler).\
+I have created this ide on the frontend with React and the api been used for compilation is been made in node by me (https://github.com/manwindersingh1712/Compiler )./
 Two languages are been implemented for now i.e. python and c++./
 The link to ide is :-http://manwinder-ide.herokuapp.com/
 
