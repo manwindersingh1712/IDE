@@ -50,6 +50,7 @@ class Main extends React.Component {
       output: "",
     });
   };
+
   handleCodeChange = (code) => this.setState({ code });
   handleInputChange = (input) => this.setState({ input });
 
@@ -65,7 +66,7 @@ class Main extends React.Component {
           <select name="mode" onChange={this.setMode} value={this.state.mode}>
             {languages.map((lang) => (
               <option key={lang} value={lang}>
-                {lang}
+                {lang === "c_cpp" ? "c++" : lang}
               </option>
             ))}
           </select>
@@ -108,6 +109,7 @@ class Main extends React.Component {
             editorProps={{ $blockScrolling: true }}
             tabSize={3}
             onChange={this.handleCodeChange}
+            enableBasicAutocompletion={true}
             setOptions={{
               enableBasicAutocompletion: true,
               enableLiveAutocompletion: true,
